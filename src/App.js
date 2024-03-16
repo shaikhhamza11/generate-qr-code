@@ -1,13 +1,16 @@
 import React from 'react';
 import InputForm from './components/InputForm';
+import Qr from './components/Qr';
+import InputContextProvider from './context/InputContextProvider';
+
 const App = () => {
   return (
-    <div className='bg-gradient-to-r from-cyan-500 to-blue-500 h-screen pt-36 px-2'>
-      <div className='container mx-auto max-w-4xl bg-white rounded shadow'>
-        <div className='md:grid md:grid-cols-3'>
+    <div className='flex justify-center items-center min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500'>
+      <div className='container bg-white rounded-lg shadow-md p-8 w-screen h-screen md:mx-auto md:max-w-lg md:m-8 md:h-full'>
+        <InputContextProvider>
           <InputForm />
-          <h1>Qr code</h1>
-        </div>
+          <Qr />
+        </InputContextProvider>
       </div>
     </div>
   );
